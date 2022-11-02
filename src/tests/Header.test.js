@@ -1,27 +1,25 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 import Header from '../component/Header';
-import HeaderDois from '../component/HeaderDois';
+// import HeaderDois from '../component/HeaderDois';
+import renderWithRouter from '../helpers/renderWithRouter';
 //
-describe('Requisito 8 e 9', () => {
-  test('teste link requisito 7 header linha 7', () => {
-    render(<Header />);
-    expect(getByTestId('profile-top-btn').toBeInTheDocument('link'));
+describe('Testa o componente header', () => {
+  it('testa se o link redireciona para a pagina profile', () => {
+    const { history } = renderWithRouter(<Header />);
+    const linkButton = screen.getByRole('link');
+    expect(linkButton).toBeInTheDocument();
+    userEvent.click(linkButton);
+    expect(history.location.pathname).toBe('/profile');
   });
-  test('teste link requisito 7 header2 linha 6', () => {
-    render(<HeaderDois />);
-    expect(getByTestId('profile-top-btn')).toHaveAccessibleDescription();
-  });
-  it('teste requisito 9', () => {
-    render(<HeaderDois />);
-    expect(getByTestId('search-input')).toHaveAccessibleDescription();
-  });
-  it('teste requisito 9', async () => {
-    render(<HeaderDois />);
-    const button = screen.getByRole('button');
-    const heading = screen.getByText('Hello World!');
-    await fireEvent.click(button);
-    expect(button).toBeInTheDocument('input');
-    expect(heading).toBeInTheDocument();
+
+  it('testa se ao clicar no botão de busca o componente searchBar é renderizado', () => {
+    renderWithRouter(<Header />);
+    const searchButton = screen.getByRole('button');
+    expect(searchButton).toBeInTheDocument();
+    userEvent.click(searchButton);
+    const searchInput = screen.getByLabelText('Search');
+    expect(searchInput).toBeInTheDocument();
   });
 });
