@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../helpers/renderWithRouter';
@@ -11,7 +11,7 @@ const idButton = 'login-submit-btn';
 
 describe('Testando a tela de login', () => {
   test('Testa se todos os elementos estão na tela', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     const emailInput = screen.getByTestId(idEmail);
     const passwordInput = screen.getByTestId(idPassword);
     const loginButton = screen.getByTestId(idButton);
@@ -23,7 +23,7 @@ describe('Testando a tela de login', () => {
   });
 
   test('Testa se o botão é habilitado quando são digitados email e senha corretas', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     const emailInput = screen.getByTestId(idEmail);
     const passwordInput = screen.getByTestId(idPassword);
     const loginButton = screen.getByTestId(idButton);
@@ -33,7 +33,7 @@ describe('Testando a tela de login', () => {
   });
 
   test('Testa se o botão fica desabilitado com', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     const emailInput = screen.getByTestId(idEmail);
     const passwordInput = screen.getByTestId(idPassword);
     const loginButton = screen.getByTestId(idButton);
