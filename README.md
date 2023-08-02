@@ -1,5 +1,7 @@
 # App de Receitas
 
+- [Acesse](https://receitasapp.vercel.app/)
+
 ## Descrição
 
 O **App de Receitas** é um aplicativo de receitas que contém uma variedade de deliciosas receitas de drinks e comidas. Este projeto foi desenvolvido em grupo pelos seguintes colegas:
