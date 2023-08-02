@@ -8,6 +8,7 @@ O **App de Receitas** é um aplicativo de receitas que contém uma variedade de 
 - [Gleiderson David](https://github.com/gleidersondavid)
 - [Ícaro Elinton](https://github.com/IOelinton)
 - [Pedro Nunes](https://github.com/Pedroicn)
+- [Oelinton](https://github.com/IOelinton)
 
 O aplicativo é desenvolvido utilizando as tecnologias web HTML, CSS e React (com Context API). O objetivo do projeto é fornecer uma plataforma simples e fácil de usar para os usuários descobrirem e compartilharem receitas incríveis.
 
